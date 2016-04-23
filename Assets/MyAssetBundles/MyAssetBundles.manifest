@@ -1,9 +1,0 @@
-ManifestFileVersion: 0
-AssetBundleManifest:
-  AssetBundleInfos:
-    Info_0:
-      Name: shape/cube
-      Dependencies: {}
-    Info_1:
-      Name: shape/sphere
-      Dependencies: {}
