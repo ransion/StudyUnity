@@ -4,3 +4,4 @@ UnityVS*
 *.sln
 *.csproj
 *.suo
+obj*
