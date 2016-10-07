@@ -21,6 +21,8 @@ public class AnimatorFactory : EditorWindow
 {
 	#region const
 	private const string AnimatorSavePath = "Assets/Standard Assets/Characters/ThirdPersonCharacter/Animator/";
+	private const string PrefabSavePath = "Assets/Standard Assets/Characters/ThirdPersonCharacter/Prefabs/";
+	private const string ModelPath = "Assets/Standard Assets/Characters/ThirdPersonCharacter/Models/";
 	private const string AnimationPath = "Assets/Standard Assets/Characters/ThirdPersonCharacter/Animation/Humanoid";
 	private const string AnimatorControllerSuffix = "AnimatorController.controller";
 	#endregion const
@@ -109,26 +111,24 @@ public class AnimatorFactory : EditorWindow
 
 	private void BindControllerToPrefab()
 	{
-		//string fileName = GetHeroPrefabName(curHeroName);
-		//if (string.IsNullOrEmpty(fileName))
-		//{
-		//	Debug.LogError("Can not fine hero:" + curHeroName);
-		//	return;
-		//}
+		// Generate prefab first time
+		var prefab = AssetDatabase.LoadAssetAtPath(ModelPath + characterName + ".fbx", typeof(GameObject)) as GameObject;
+		var go = Instantiate(prefab);
+		go.name = characterName + "Prefab";
 
-		//Object prefab;
-		//GameObject go;
-		//Animator animator;
+		var animator = go.GetComponent<Animator>() ?? go.AddComponent<Animator>();
 
-		//prefab = Resources.Load(PrefabPath + fileName);
-		//go = Instantiate(prefab) as GameObject;
+		animator.runtimeAnimatorController = productController;
+		PrefabUtility.CreatePrefab(PrefabSavePath + go.name + ".prefab", go);
+		DestroyImmediate(go);
 
-		//animator = go.GetComponent<Animator>();
-		//if (null == animator)
-		//	animator = go.AddComponent<Animator>();
+		// If there has been a prefab, just bind controller to it.
+		//var prefab = AssetDatabase.LoadAssetAtPath(PrefabSavePath + characterName, typeof(GameObject)) as GameObject;
+		//var go = Instantiate(prefab) as GameObject;
+
+		//var animator = go.GetComponent<Animator>() ?? go.AddComponent<Animator>();
 
 		//animator.runtimeAnimatorController = productController;
-		//animator.SetLayerWeight(1, 1f);
 		//PrefabUtility.ReplacePrefab(go, prefab);
 		//DestroyImmediate(go);
 	}
@@ -251,7 +251,7 @@ public class AnimatorFactory : EditorWindow
 		AnimationClip fallClip = AnimatorFactoryUtil.LoadAnimClip(fbxPath, "HumanoidFall");
 		AnimationClip idleJumpUpClip = AnimatorFactoryUtil.LoadAnimClip(fbxPath, "HumanoidIdleJumpUp");
 		AnimationClip jumpUpClip = AnimatorFactoryUtil.LoadAnimClip(fbxPath, "HumanoidJumpUp");
-		AnimationClip MidAirClip = AnimatorFactoryUtil.LoadAnimClip(fbxPath, "HumanoidMidAir");
+		AnimationClip midAirClip = AnimatorFactoryUtil.LoadAnimClip(fbxPath, "HumanoidMidAir");
 
 		// create a tree
 		BlendTree tree = new BlendTree();
@@ -269,7 +269,7 @@ public class AnimatorFactory : EditorWindow
 		tree.AddChild(fallClip, new Vector2(0f, 0f));
 		tree.AddChild(idleJumpUpClip, new Vector2(0f, 1f));
 		tree.AddChild(jumpUpClip, new Vector2(1f, 0f));
-		tree.AddChild(MidAirClip, new Vector2(-1f, 0f));
+		tree.AddChild(midAirClip, new Vector2(-1f, 0f));
 
 		// Add tree to controller asset
 		if (AssetDatabase.GetAssetPath(productController) != string.Empty)
