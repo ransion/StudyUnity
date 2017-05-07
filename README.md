@@ -18,4 +18,5 @@
 **AnimatorFactory** | [Unity如何自动生成动画状态机](http://baizihan.me/2016/10/animator-factory/) | [Unity如何自动生成动画状态机](http://www.jianshu.com/p/cf1b54b78c23) |
 **SkillIndicator** | [Unity——来个可变角度的扇形技能指示器](http://baizihan.me/2016/10/draw-sector/) | [Unity——来个可变角度的扇形技能指示器](http://www.jianshu.com/p/7bb276b08d23) |
 **AssetHelper** | [Unity预设序列化的自动化方案](http://baizihan.me/2017/02/asset-helper/) | [Unity预设序列化的自动化方案](http://www.jianshu.com/p/de39ff69a8f4) |
+**GizmosHelper** | [眼见为实——如何在Unity中画出碰撞范围](http://baizihan.me/2017/05/gizmos-helper/) | [眼见为实——如何在Unity中画出碰撞范围](http://www.jianshu.com/p/17ddf7911b20) |
 
