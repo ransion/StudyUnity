@@ -27,6 +27,7 @@ namespace Assets.Scripts.Utils.GizmosHelper
         }
 
         #endregion
+
         #region private members
         private class Point
         {
@@ -96,10 +97,13 @@ namespace Assets.Scripts.Utils.GizmosHelper
         #endregion private members
 
         #region public members
-        public static bool Enable;
+
+        public bool Enable;
+
         #endregion public members
 
         #region mono
+
         private void Awake()
         {
             DontDestroyOnLoad(gameObject);
@@ -133,9 +137,11 @@ namespace Assets.Scripts.Utils.GizmosHelper
             DrawCapsules();
             Gizmos.color = oldColor;
         }
+
         #endregion mono
 
         #region public interfaces
+
         public void DrawPoint(string pointName, Vector3 pos, Color color)
         {
             if (!Enable)
@@ -299,9 +305,11 @@ namespace Assets.Scripts.Utils.GizmosHelper
             Cubes.Clear();
             Capsules.Clear();
         }
+
         #endregion public interfaces
 
         #region private implements
+
         private void DrawPoints()
         {
             foreach (var item in Points)
