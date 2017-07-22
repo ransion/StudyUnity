@@ -19,4 +19,5 @@
 **SkillIndicator** | [Unity——来个可变角度的扇形技能指示器](http://baizihan.me/2016/10/draw-sector/) | [Unity——来个可变角度的扇形技能指示器](http://www.jianshu.com/p/7bb276b08d23) |
 **AssetHelper** | [Unity预设序列化的自动化方案](http://baizihan.me/2017/02/asset-helper/) | [Unity预设序列化的自动化方案](http://www.jianshu.com/p/de39ff69a8f4) |
 **GizmosHelper** | [眼见为实——如何在Unity中画出碰撞范围](http://baizihan.me/2017/05/gizmos-helper/) | [眼见为实——如何在Unity中画出碰撞范围](http://www.jianshu.com/p/17ddf7911b20) |
+**FormatWindow** | [Unity格式化代码工具](http://baizihan.me/2017/07/format-window/) | [Unity格式化代码工具](http://www.jianshu.com/p/02510524eeee) |
 
