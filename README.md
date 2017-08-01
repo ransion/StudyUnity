@@ -9,6 +9,8 @@
 我的微博：http://weibo.com/allenkashiwa
 
 
+**Projector** 项目无对应文章，该工程利用Unity自带的Projector实现了一个类似守望先锋，CS等游戏中的喷漆功能，感兴趣的朋友可以看看。
+
 项目名 | 博客文章 | 简书文章 |
 ---|---|---|
  **UGUIDialog** | [UGUI动态加载对话框](http://baizihan.me/2016/03/ugui/) | [UGUI动态加载对话框](http://www.jianshu.com/p/94c782bd6d5e) |
