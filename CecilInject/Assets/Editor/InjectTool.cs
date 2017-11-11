@@ -16,12 +16,15 @@ public static class InjectTool {
             Debug.Log("You need stop play mode or wait compiling finished");
             return;
         }
+
+        // 加载程序集
         var assembly = AssemblyDefinition.ReadAssembly(AssemblyPath);
         if (assembly == null)
         {
             Debug.LogFormat("Can't load assembly:{0}", AssemblyPath);
             return;
         }
+
         var module = assembly.MainModule;
         foreach (var type in module.Types)
         {
