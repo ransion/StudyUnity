@@ -4,7 +4,7 @@
 
 我的博客：http://baizihan.me/
 
-我的知乎：https://www.zhihu.com/people/baizihan
+知乎专栏：https://zhuanlan.zhihu.com/allenprogramming
 
 我的微博：http://weibo.com/allenkashiwa
 
@@ -22,4 +22,4 @@
 **AssetHelper** | [Unity预设序列化的自动化方案](http://baizihan.me/2017/02/asset-helper/) | [Unity预设序列化的自动化方案](http://www.jianshu.com/p/de39ff69a8f4) |
 **GizmosHelper** | [眼见为实——如何在Unity中画出碰撞范围](http://baizihan.me/2017/05/gizmos-helper/) | [眼见为实——如何在Unity中画出碰撞范围](http://www.jianshu.com/p/17ddf7911b20) |
 **FormatWindow** | [Unity格式化代码工具](http://baizihan.me/2017/07/format-window/) | [Unity格式化代码工具](http://www.jianshu.com/p/02510524eeee) |
-
+**CecilInject** | [使用Mono.Cecil实现IL代码注入](http://baizihan.me/2017/11/cecil/) | [使用Mono.Cecil实现IL代码注入](http://www.jianshu.com/p/a5276aadccdd) |
