@@ -20,7 +20,7 @@ public class Inject
     public static int GetMax(int a, int b)
     {
         return a;
-    }
+    } 
 }
 
 public class Test : MonoBehaviour
@@ -31,4 +31,3 @@ public class Test : MonoBehaviour
         Debug.LogFormat("Inject Max: {0}", Inject.GetMax(6, 9));
     }
 }
-
