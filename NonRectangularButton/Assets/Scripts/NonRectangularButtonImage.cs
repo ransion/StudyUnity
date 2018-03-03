@@ -71,22 +71,25 @@ public class NonRectAngularButtonImageHelper
         if (goRoot == null)
             return;
 
-        var image = goRoot.GetComponent<Image>();
         var button = goRoot.GetComponent<Button>();
 
-        if (image == null || button == null)
+        if (button == null)
         {
             Debug.Log("Selecting Object is not a button!");
             return;
         }
 
         // 关闭原来button的射线检测
-        image.raycastTarget = false;
+        var graphics = goRoot.GetComponentsInChildren<Graphic>();
+        foreach (var graphic in graphics)
+        {
+            graphic.raycastTarget = false;
+        }
 
         var polygon = new GameObject("NonRectangularButtonImage");
         polygon.AddComponent<PolygonCollider2D>();
         polygon.AddComponent<NonRectangularButtonImage>();
-        polygon.transform.SetParent(goRoot.transform);
+        polygon.transform.SetParent(goRoot.transform, false);
         polygon.transform.SetAsLastSibling();
     }
 }
