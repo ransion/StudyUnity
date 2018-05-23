@@ -5,17 +5,7 @@ using System.Collections;
 public class LoadAsyncBundle : MonoBehaviour
 {
 
-	//根据平台，得到相应的路径
-	public static readonly string BundleURL =
-#if UNITY_ANDROID
-		"jar:file://" + Application.dataPath + "!/assets/MyAssetBundles/shape/cube";
-#elif UNITY_IPHONE
-		Application.dataPath + "/Raw/MyAssetBundles/shape/cube";
-#elif UNITY_STANDALONE_WIN || UNITY_EDITOR
- "file://" + Application.dataPath + "/MyAssetBundles/shape/sphere";
-#else
-        string.Empty;
-#endif
+
 
 	private string AssetName = "Sphere1";
 
@@ -23,7 +13,7 @@ public class LoadAsyncBundle : MonoBehaviour
 	{
 		while (!Caching.ready)
 			yield return null;
-		using (WWW www = new WWW(BundleURL))
+		using (WWW www = new WWW(Config.BundleURL+ "sphere"))
 		{
 			yield return www;
 			if (www.error != null)

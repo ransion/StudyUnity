@@ -1,9 +1,10 @@
 ManifestFileVersion: 0
+CRC: 1268352037
 AssetBundleManifest:
   AssetBundleInfos:
     Info_0:
-      Name: shape/cube
+      Name: shape/sphere
       Dependencies: {}
     Info_1:
-      Name: shape/sphere
+      Name: shape/cube
       Dependencies: {}
