@@ -1,4 +1,6 @@
-﻿Shader "Custom/Indicator" {
+﻿// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
+Shader "Custom/Indicator" {
     Properties {  
         _MainTex("Main Texture", 2D) = "white" {}
         _Color ("Color", Color) = (0.17,0.36,0.81,0.0)
@@ -31,7 +33,7 @@
             {
                 fragmentInput o;
 
-                o.pos = mul (UNITY_MATRIX_MVP, v.vertex);
+                o.pos = UnityObjectToClipPos (v.vertex);
                 o.uv = v.texcoord.xy;
 
                 return o;
